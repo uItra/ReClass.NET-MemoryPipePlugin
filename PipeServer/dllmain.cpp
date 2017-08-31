@@ -2,7 +2,7 @@
 namespace fs = std::experimental::filesystem;
 #include <process.h>
 
-#include "NamedPipeServerStream.hpp"
+#include "PipeStream/NamedPipeServerStream.hpp"
 #include "MessageClient.hpp"
 
 std::wstring CreatePipeName()
@@ -41,7 +41,7 @@ MessageClient CreateClient(NamedPipeServerStream& pipe)
 //---------------------------------------------------------------------------
 void PipeThread(void*)
 {
-	auto name = CreatePipeName();
+	const auto name = CreatePipeName();
 	
 	while (true)
 	{

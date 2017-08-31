@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -22,32 +22,32 @@
     <ProjectGuid>{75CAA2A9-D512-40E0-8918-B7F87806805E}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>PipeServer</RootNamespace>
-    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -146,28 +146,28 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="BinaryReader.cpp" />
-    <ClCompile Include="BinaryWriter.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="MemoryHelper.cpp" />
-    <ClCompile Include="MemoryStream.cpp" />
     <ClCompile Include="MessageClient.cpp" />
     <ClCompile Include="Messages.cpp" />
-    <ClCompile Include="NamedPipeServerStream.cpp" />
-    <ClCompile Include="PipeStream.cpp" />
+    <ClCompile Include="PipeStream\BinaryReader.cpp" />
+    <ClCompile Include="PipeStream\BinaryWriter.cpp" />
+    <ClCompile Include="PipeStream\MemoryStream.cpp" />
+    <ClCompile Include="PipeStream\NamedPipeServerStream.cpp" />
+    <ClCompile Include="PipeStream\PipeStream.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BinaryReader.hpp" />
-    <ClInclude Include="BinaryWriter.hpp" />
-    <ClInclude Include="Exceptions.hpp" />
-    <ClInclude Include="MemoryStream.hpp" />
     <ClInclude Include="MessageClient.hpp" />
     <ClInclude Include="Messages.hpp" />
-    <ClInclude Include="NamedPipeServerStream.hpp" />
-    <ClInclude Include="PipeStream.hpp" />
+    <ClInclude Include="PipeStream\BinaryReader.hpp" />
+    <ClInclude Include="PipeStream\BinaryWriter.hpp" />
+    <ClInclude Include="PipeStream\Exceptions.hpp" />
+    <ClInclude Include="PipeStream\MemoryStream.hpp" />
+    <ClInclude Include="PipeStream\NamedPipeServerStream.hpp" />
+    <ClInclude Include="PipeStream\PipeStream.hpp" />
+    <ClInclude Include="PipeStream\SafeHandle.hpp" />
+    <ClInclude Include="PipeStream\Stream.hpp" />
     <ClInclude Include="ReClassNET_Plugin.hpp" />
-    <ClInclude Include="SafeHandle.hpp" />
-    <ClInclude Include="Stream.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
